@@ -1,0 +1,8 @@
+リクエストの中身を見るだけ
+q8:FLAG_5ux7zK2NKSH8fSGA
+
+
+[別解]
+レスポンスとかに含まれてる"cTg6RkxBR181dXg3eksyTktTSDhmU0dB"という文字列はbase64でエンコードされているだけなので，
+echo "cTg6RkxBR181dXg3eksyTktTSDhmU0dB" |base64 -d
+でもいける

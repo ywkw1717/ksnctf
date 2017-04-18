@@ -1,0 +1,21 @@
+まず，secret.zipをfileするとzipじゃなくpngだと言われる．
+
+とりあえず，secret.pngとして複製しておいて，zipのほうは普通に解凍．
+
+２つのファイルが出てくるので，重ねる系だろうと予想．
+
+最初はcatとかでやっていたが，うまく重ねることができていないっぽいのでググる．
+
+Imagemagickが神．
+
+composite -gravity southeast -compose over share1.png share2.png after.png
+とかで２つの画像を合成できる．(１番目が上，２番目が下，３番目が生成される画像)
+
+すると，The last share is hidden in the ZIP とか出てくるので，
+
+composite -gravity southeast -compose over after.png secret.png flag.png
+
+でおしまい．
+
+
+FLAG_xWqGGiTkpQpF43mp

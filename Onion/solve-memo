@@ -1,0 +1,7 @@
+cat text |base64 -d |base64 -d|base64 -d |base64 -d |base64 -d |base64 -d |base64 -d |base64 -d |base64 -d |base64 -d |base64 -d |base64 -d |base64 -d |base64 -d |base64 -d |base64 -d > output
+
+sharutils パッケージに，uudecode,uuencode入っているので入れる必要あり
+
+uudecode file
+
+FLAG_FeLgP3SiAWezWPHu

@@ -1,0 +1,28 @@
+gdb-peda$ checksec
+CANARY    : ENABLED
+FORTIFY   : disabled
+NX        : ENABLED
+PIE       : disabled
+RELRO     : FULL
+
+libc 配布
+
+- format string bug
+
+PIEが有効ではないので，実行ファイルの配置アドレスは変わらない
+
+%s, %nはSIGSEGV
+%c，エスケープされてる？
+%d,%p,%xは通る
+
+--------------
+Welcome
+What's your name?
+AAAAAAAAAA%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p
+Hi, AAAAAAAAAA0x100,0xf7615600,(nil),(nil),(nil),(nil),0x41414141,0x41414141,0x70254141,0x2c70252c,0x252c7025
+Here is Despair Town...
+--------------
+
+
+http://inaz2.hatenablog.com/entry/2014/04/30/173618
+が役に立ちそう

@@ -1,0 +1,15 @@
+~/ctf/ksnctf/simple_auth2:yyy@(*｡˃̵ω ˂̵｡) < cat database.db
+����*�;viewuseruserCREATE VIEW user AS SELECT id, SUBSTR(password, 6,1)||SUBSTR(password, 2,1)||SUBSTR(password,13,1)||SUBSTR(password, 1,1)||SUBSTR(password,17,1)||SUBSTR(password, 8,1)||SUBSTR(password,15,1)||SUBSTR(password,19,1)||SUBSTR(password, 3,1)||SUBSTR(password, 4,1)||SUBSTR(password,12,1)||SUBSTR(password,21,1)||SUBSTR(password, 5,1)||SUBSTR(password,11,1)||SUBSTR(password,16,1)||SUBSTR(password, 7,1)||SUBSTR(password,10,1)||SUBSTR(password,18,1)||SUBSTR(password, 9,1)||S��7rootGLDmNFJimveAAxyg_wSNp%                                                                                                                                 ~/ctf/ksnctf/simple_auth2:yyy@(*｡˃̵ω ˂̵｡) < file database.db
+database.db: SQLite 3.x database
+~/ctf/ksnctf/simple_auth2:yyy@(*｡˃̵ω ˂̵｡) < sqlite3
+SQLite version 3.8.7.4 2014-12-09 01:34:36
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .open database.db
+sqlite> select * from user
+   ...> ;
+root|FLAG_iySDmApNegJvwmxN
+sqlite>
+
+ソースで指定されているdatabase.dbファイルは相対パスなので，URLのindex.phpをdatabase.dbに変えれば持ってこれる．あとはsqlite3開いて，見るだけ．

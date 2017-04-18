@@ -1,0 +1,119 @@
+最初，DS;[001B519C] = 5と，EAXレジスタ（入力文字数）を比較してる
+つまり，５文字以外はWrongルートへ
+
+その後
+第一引数：0x111
+第二引数：0x20
+第三引数：0x0039F5D8
+からの，mfc100.60CE4555をcall
+
+mov eax, mfc100.60CF8D54(eax = 60CF8D54)
+
+
+what is the largest island in the world
+(世界で一番大きい島？) -> Greenland
+
+answer to the ultimate question of life the universe and everything
+(生命，宇宙，そして万物についての究極の答え) -> 42
+
+
+0041EF58   00AF3A08  ASCII "ォォォォォォォォォォォォォォォォォォォォォォォォ"
+
+What is the flag?
+
+
+0041EE70   00494E48  UNICODE "aaaaaland"
+
+flag0x15文字(21文字)
+FLAG_HumanGreenland42
+
+FLAG_42eenlandHumanGr
+
+
+0x1-0x100(256)までをeaxをincさせながらeax+C75578に書き込んで行っている
+対応表？定数？みたいなのを作成するルーチン？
+
+00c71820-00c71911
+00c75578に用意したものに対してなにかしら処理を加えている
+
+
+
+anwer checkのところ
+mov edx, DWORD PTR DS:[ESI(0022F478)]
+cmp edx, DWORD PTR DS:[ECX]
+
+[final]
+0x1-0x100(256)までをeaxをincさせながらeax+10B5578に書き込んで行っている
+対応表？定数？みたいなのを作成するルーチン？
+
+
+[1]same character
+mov edx, DWORD PTR DS:[ESI(0041EEA0)]->0D1BFFBF
+cmp edx, DWORD PTR DS:[ECX(010B51F4)]->0D1BFFBF
+
+add ecx, 4
+add esi, 4
+
+
+0x15                   FLAG_
+0x15 - 0x04 = 0x11     
+0x11 - 0x04 = 0x0D 
+0x0D - 0x04 = 0x09
+0x09 - 0x04 = 0x05
+
+DWORD PTR DS:[ECX] ECX = Riddle.00c751f4
+1回目：0D1BFFBF 先頭５文字が"FLAG_"かどうか比較
+2回目：4F18A747
+3回目：595CD6CB
+4回目：57736195
+5回目：9F94D1B3
+
+Human Greenland 42
+
+aaaa -> 57 3C 8B 47
+bbbb -> 54 3F 88 47
+cccc -> 55 3E 89 47
+AAAA -> 77 1C AB 47
+0000 -> 06 6D DA 47
+1111 -> 07 6C DB 47
+{{{{ -> 4D 26 91 47
+
+aaaa -> 5E 67 83 F8
+bbbb -> 5D 64 80 FB
+cccc -> 5C 65 81 FA
+AAAA -> 7E 47 A3 D8
+0000 -> 0F 36 D2 A9
+1111 -> 0E 37 D3 A8
+
+aaaa -> 7E 26 41 C0
+AAAA -> 5E 06 61 E0
+0000 -> 2F 77 10 91
+1111 -> 2E 76 11 90
+
+AAAA -> ED E2 C7 B4
+0000 -> 9C 93 B6 C5
+1111 -> 9D 92 B7 C4
+
+
+ccccccc42eenland
+2nd 55 3E 89 47
+3rd 5C 65 81 FA
+
+
+
+address:010B17F4
+mov edx, 2
+sub edx, Riddle.010B5578
+(edx is FEF4AA8A)
+push esi(78)(?)
+push edi(15)(number of character)
+mov DWORD PTR SS:[ebp-8], edx
+mov edi, 1
+mov edx, 3
+xor cl, cl(ecxの下位２バイトを初期化)
+xor eax, eax
+sub edi, Riddle.010B5578
+(edi is FEF4AA89)
+sub edx, Riddle.010B5578
+(edx is FEF4AA8B)
+(Riddle.010B5578には0xFEF4AA88)

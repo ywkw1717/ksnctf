@@ -1,0 +1,11 @@
+"unzipで解凍する"のはすぐにわかったんだけど，その後がわからなすぎた．
+
+find使って，FLAGをgrepしてもでてこないし目視で片っ端から，見やすいようにブラウザで開いて探していった．
+
+document.xmlに書いてあった．
+
+<pic:cNvPr id="0" name="Picture 2" descr="C:\Users\FLxAG_NTSCFTTKP5ZDDW\Documents\paper\P is equal to NP\remove_x\200px-Complexity_subsets_pspace.svg.png"/>
+
+FLxAG_NTSCFTTKP5ZDDW
+
+解凍してからの正攻法はなにかあるのか・・・？
