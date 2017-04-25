@@ -25,10 +25,6 @@ What is the flag?
 0041EE70   00494E48  UNICODE "aaaaaland"
 
 flag0x15文字(21文字)
-FLAG_HumanGreenland42
-
-FLAG_42eenlandHumanGr
-
 
 0x1-0x100(256)までをeaxをincさせながらeax+C75578に書き込んで行っている
 対応表？定数？みたいなのを作成するルーチン？
